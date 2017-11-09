@@ -98,7 +98,7 @@ $(function() {
     var codeblock = null
     var pre = null
     var preHeight = 0
-	var lineHeight = 0
+    var lineHeight = 0
 	
     var linenoblock = null
     var linenoline = null
