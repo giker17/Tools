@@ -6,7 +6,6 @@ window.App.Options = {}
 
 $(function() {
   "use strict"
-  console.info(1)
 
   // From http://www.softcomplex.com/docs/get_window_size_and_scrollbar_position.html
   var filterResult = function(win, docel, body) {
@@ -95,39 +94,38 @@ $(function() {
   
   // custom: add line no to code block
   var prefix_lineno = function(){
-	var codeblocks = document.getElementsByClassName('codehilite')
-	var codeblock = null
-	var pre = null
-	var preHeight = 0
-	var linenoblock = null
-	var linenoline = null
-	var linenum = 0
-	var i, j, len = 0
-	var prestyle = null
-	for(i = 0, len = codeblocks.length; i < len; i++){
-	  codeblock = codeblocks[i]
-	  if(codeblock.getElementsByClassName('lineno-block').length <= 0){
-	    pre = codeblock.getElementsByTagName('pre')[0]
-	    prestyle = window.getComputedStyle(pre)
-	    preHeight = parseFloat(prestyle.height) - parseFloat(prestyle.paddingTop) - parseFloat(prestyle.paddingBottom)
-	    linenum = (preHeight/parseFloat(prestyle.lineHeight)).toFixed(0)
-
-	    linenoblock = document.createElement('div')
-	    linenoblock.classList = 'lineno-block'
-	    linenoblock.style.lineHeight = prestyle.lineHeight
-	    linenoblock.style.marginTop = prestyle.marginTop
-	    linenoblock.style.marginBottom = prestyle.marginBottom
-	    for (j = 0; j < linenum; j++){
-	      linenoline = document.createElement('span')
-	      linenoline.classList = 'lineno-line'
-	      linenoline.innterText = j + 1
-	      linenoline.innerHTML = j + 1
-	      linenoblock.appendChild(linenoline)
-	    }
-
-	    codeblock.prepend(linenoblock)
-	  }
-	}
+    var codeblocks = document.getElementsByClassName('codehilite')
+    var codeblock = null
+    var pre = null
+    var preHeight = 0
+    var linenoblock = null
+    var linenoline = null
+    var linenum = 0
+    var i, j, len = 0
+    var prestyle = null
+    for(i = 0, len = codeblocks.length; i < len; i++){
+      codeblock = codeblocks[i]
+      if(codeblock.getElementsByClassName('lineno-block').length <= 0){
+        pre = codeblock.getElementsByTagName('pre')[0]
+        prestyle = window.getComputedStyle(pre)
+        preHeight = parseFloat(prestyle.height) - parseFloat(prestyle.paddingTop) - parseFloat(prestyle.paddingBottom)
+        linenum = (preHeight/parseFloat(prestyle.lineHeight)).toFixed(0)
+    
+        linenoblock = document.createElement('div')
+        linenoblock.classList = 'lineno-block'
+        linenoblock.style.lineHeight = prestyle.lineHeight
+        linenoblock.style.marginTop = prestyle.marginTop
+        linenoblock.style.marginBottom = prestyle.marginBottom
+        for (j = 0; j < linenum; j++){
+          linenoline = document.createElement('span')
+          linenoline.classList = 'lineno-line'
+          linenoline.innterText = j + 1
+          linenoline.innerHTML = j + 1
+          linenoblock.appendChild(linenoline)
+        }
+        codeblock.prepend(linenoblock)
+      }
+    }
   }
 
   var poll = function() {
@@ -193,7 +191,7 @@ $(function() {
           break
         }
 		
-		prefix_lineno()
+        prefix_lineno()
       }).fail(function() {
         // Status <- Offline
         // console.log('Offline')
