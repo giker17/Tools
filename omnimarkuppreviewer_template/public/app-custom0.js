@@ -121,7 +121,7 @@ $(function() {
     
         linenoblock = document.createElement('div')
         linenoblock.classList = 'lineno-block'
-        linenoblock.style.lineHeight = lineHeight
+        linenoblock.style.lineHeight = prestyle.lineHeight
         linenoblock.style.marginTop = prestyle.marginTop
         linenoblock.style.marginBottom = prestyle.marginBottom
         for (j = 0; j < linenum; j++){

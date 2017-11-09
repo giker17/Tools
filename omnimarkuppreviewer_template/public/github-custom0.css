@@ -805,5 +805,5 @@ pre {
 .codehilite .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 /* lineno block */
-.codehilite .lineno-block { width:45px; height: 99%; padding: 14px 5px;float: left; background-color: #eee; color: #888;font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;/* line-height:1.45 */ }
+.codehilite .lineno-block { width:45px; height: 99%; padding: 14px 5px;float: left; background-color: #eee; color: #aaa;font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;/* line-height:1.45 */ }
 .codehilite .lineno-block .lineno-line { display: block; text-align: right; }
