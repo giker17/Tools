@@ -40,7 +40,7 @@ title: Custom omnimarkuppreviewer - a template
 
 - Just copy them to the corresponding path, and add a line of setting shown above into the omnimarkuppreviewer settings.
 
-Here are some code to test:
+Here are some code for test:
 
 ```python
 def calc_rotation( vector0, theta0, shift0 ):
