@@ -98,6 +98,8 @@ $(function() {
     var codeblock = null
     var pre = null
     var preHeight = 0
+	var lineHeight = 0
+	
     var linenoblock = null
     var linenoline = null
     var linenum = 0
@@ -108,18 +110,23 @@ $(function() {
       if(codeblock.getElementsByClassName('lineno-block').length <= 0){
         pre = codeblock.getElementsByTagName('pre')[0]
         prestyle = window.getComputedStyle(pre)
+        lineHeight = parseFloat(prestyle.lineHeight)
         preHeight = parseFloat(prestyle.height) - parseFloat(prestyle.paddingTop) - parseFloat(prestyle.paddingBottom)
-        linenum = (preHeight/parseFloat(prestyle.lineHeight)).toFixed(0)
+
+        // 17: 16.4 = 26 * 0.64; 1000: 999.68 = 1562 * 0.64
+        // 1562 = 1000 * a + b; 26 = 17 * a + b
+        // a = 1.5625635808748728; b = -0.5635808748727413
+
+        linenum = parseInt(preHeight / (parseInt(1.5625635808748728 * lineHeight - 0.5635808748727413 + 0.5) * 64 / 100) + 0.5)
     
         linenoblock = document.createElement('div')
         linenoblock.classList = 'lineno-block'
-        linenoblock.style.lineHeight = prestyle.lineHeight
+        linenoblock.style.lineHeight = lineHeight
         linenoblock.style.marginTop = prestyle.marginTop
         linenoblock.style.marginBottom = prestyle.marginBottom
         for (j = 0; j < linenum; j++){
           linenoline = document.createElement('span')
           linenoline.classList = 'lineno-line'
-          //linenoline.innerText = j + 1
           linenoline.innerHTML = j + 1
           linenoblock.appendChild(linenoline)
         }
