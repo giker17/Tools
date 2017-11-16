@@ -127,7 +127,7 @@ $(function() {
         for (j = 0; j < linenum; j++){
           linenoline = document.createElement('span')
           linenoline.classList = 'lineno-line'
-          linenoline.innerHTML = j + 1
+          linenoline.innerHTML = j + 1 + '.'
           linenoblock.appendChild(linenoline)
         }
         codeblock.prepend(linenoblock)
