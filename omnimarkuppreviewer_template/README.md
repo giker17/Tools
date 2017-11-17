@@ -71,3 +71,9 @@ Shown in my browser:
 ![code_style](omni_code_style.jpg)
 
 Have fun : ) .
+
+---
+2017.11.17 update:
+
+![code_style](omni_code_style_02.jpg)
+
