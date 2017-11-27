@@ -337,6 +337,8 @@ pre {
 .container {
     max-width: 920px;
     margin: 0 auto 20px auto;
+	margin: 0 300px 20px 80px;
+	background-color: #f8ffd0;
 }
 
 #header {
@@ -358,7 +360,7 @@ pre {
 
 .markdown-body {
   overflow: hidden;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", serif;
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
@@ -803,6 +805,9 @@ pre {
 .codehilite .vg { color: #008080 } /* Name.Variable.Global */
 .codehilite .vi { color: #008080 } /* Name.Variable.Instance */
 .codehilite .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+.toc { position: absolute; top: 10px; right: 20px; z-index: 1000; padding: 10px 20px 10px 0; max-width: 300px; max-height: 800px; overflow:auto; background-color: #f7fecc; opacity: 0.4; }
+.toc:hover { opacity: 1; }
 
 /* lineno block */
 .codehilite .lineno-block { width:50px; height: 99%; padding: 14px 5px;float: left; background-color: #eee; color: #888; border-right: 2px solid #66e166; font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;/* line-height:1.45 */ }

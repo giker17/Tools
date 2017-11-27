@@ -134,6 +134,15 @@ $(function() {
       }
     }
   }
+  
+  var float_toc = function(){
+	var toc = document.getElementsByClassName('toc')[0]
+	window.onscroll = window.onscroll || function(event){
+	  toc.style.top = window.scrollY + 10 + 'px'
+	}
+	//window.resize = window.resize || window.onscroll
+	window.onscroll()
+  }
 
   var poll = function() {
     var content$ = $('#content')
@@ -199,6 +208,7 @@ $(function() {
         }
 		
         prefix_lineno()
+		float_toc()
       }).fail(function() {
         // Status <- Offline
         // console.log('Offline')
